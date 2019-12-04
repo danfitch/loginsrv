@@ -6,6 +6,7 @@ import (
 	"net/url"
 	"os"
 
+	"regexp"
 	"strings"
 	"time"
 
@@ -110,6 +111,10 @@ func (h *Handler) isRedirectDomainWhitelisted(r *http.Request, host string) bool
 	scanner.Split(bufio.ScanLines)
 	for scanner.Scan() {
 		if host == strings.TrimSpace(scanner.Text()) {
+			return true
+		}
+		matched, err := regexp.MatchString(strings.TrimSpace(scanner.Text()), host)
+		if err != nil && matched {
 			return true
 		}
 	}
