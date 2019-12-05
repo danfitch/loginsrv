@@ -114,7 +114,7 @@ func (h *Handler) isRedirectDomainWhitelisted(r *http.Request, host string) bool
 			return true
 		}
 		matched, err := regexp.MatchString(strings.TrimSpace(scanner.Text()), host)
-		if err != nil && matched {
+		if err == nil && matched {
 			return true
 		}
 	}
