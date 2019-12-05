@@ -1,9 +1,9 @@
 package caddy
 
 import (
-	"github.com/caddyserver/caddy/caddyhttp/httpserver"
-	"github.com/tarent/loginsrv/login"
 	"context"
+	"github.com/caddyserver/caddy/caddyhttp/httpserver"
+	"github.com/danfitch/loginsrv/login"
 	"net/http"
 	"strings"
 )
