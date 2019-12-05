@@ -10,7 +10,7 @@ import (
 
 	"github.com/caddyserver/caddy"
 	"github.com/caddyserver/caddy/caddyhttp/httpserver"
-	"github.com/tarent/danfitch/login"
+	"github.com/danfitch/login"
 	"github.com/tarent/loginsrv/logging"
 
 	// Import all backends, packaged with the caddy plugin
