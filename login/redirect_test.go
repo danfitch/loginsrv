@@ -107,7 +107,7 @@ func TestRedirect_Whitelisting(t *testing.T) {
 	Equal(t, "/", recorder.Header().Get("Location"))
 
 	// setup domain whitelist file
-	domains := []byte("foo.com\ngooddomain.com \nbar.com")
+	domains := []byte("foo.com\ngooddomain.com \nbar.com\n.*.gooddomain.com")
 	_ = ioutil.WriteFile(whitelistFile.Name(), domains, 0644)
 	defer os.Remove(whitelistFile.Name())
 
